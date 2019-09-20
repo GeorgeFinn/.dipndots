@@ -18,6 +18,7 @@ set softtabstop=4
 set expandtab
 set modelines=1
 " }}}
+
 " UI Config {{{
 set number
 set showcmd
