@@ -15,19 +15,21 @@ syntax enable " Enable Syntax Processing
 " SPACES & TABS {{{
 set tabstop=4
 set softtabstop=4
+set shiftwidth=4
 set expandtab
 set modelines=1
+
+" turns on filetype detection and allows loading of language specific
+" indentation files based on that detection
+" eg. - ~/.vim/indent/python.vim gets loaded everytime I open a *.py
+filetype indent on
+set autoindent
 " }}}
 
 " UI Config {{{
 set number
 set showcmd
 set cursorline
-
-" turns on filetype detection and allows loading of language specific
-" indentation files based on that detection
-" eg. - ~/.vim/indent/python.vim gets loaded everytime I open a *.py
-filetype indent on
 
 set wildmenu " Vim autocompletes filenames when - :e ~/.vim<TAB>
 set lazyredraw
