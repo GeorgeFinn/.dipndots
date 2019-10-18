@@ -1,5 +1,19 @@
 " George Finn <george.finn@me.com>
 
+" Plug-Vim {{{
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+" }}}
+
+" Plugins {{{
+call plug#begin('~/.vim/plugged')
+Plug 'francoiscabrol/ranger.vim'
+call plug#end()
+" }}}
+
 " MISC {{{
 " This must be first, because it changes other options as a side effect.
 set nocompatible
@@ -60,9 +74,11 @@ nnoremap k gk
 " }}}
 
 " LEADER SHORTCUTS {{{
-let mapleader=","
+let mapleader=" "
 inoremap jk <esc>
 inoremap kj <esc>
+let g:ranger_map_keys = 0
+noremap <leader>r :Ranger<CR>
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
